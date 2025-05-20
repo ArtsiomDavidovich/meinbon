@@ -11,6 +11,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -45,7 +46,7 @@ public class Receipt {
     @NotNull
     @Schema(description = "Date of Receipt's creation.")
     @Column(name = "date")
-    private LocalDate date;
+    private LocalDateTime date;
 
     @NotNull
     @Schema(description = "Receipt's total price.")

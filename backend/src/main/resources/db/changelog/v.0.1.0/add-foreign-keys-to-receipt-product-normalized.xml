@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="add-foreign-keys-to-receipt-product-normalized" author="Artsiom">
+
+        <addForeignKeyConstraint
+                baseTableName="receipt_product_normalized"
+                baseColumnNames="receipt_id"
+                constraintName="fk_receipt_product_normalized_to_receipt"
+                referencedTableName="receipt"
+                referencedColumnNames="id"
+        />
+
+        <addForeignKeyConstraint
+                baseTableName="receipt_product_normalized"
+                baseColumnNames="product_normalized_id"
+                constraintName="fk_receipt_product_normalized_to_product_normalized"
+                referencedTableName="product_normalized"
+                referencedColumnNames="id"
+        />
+
+    </changeSet>
+
+</databaseChangeLog>
