@@ -14,7 +14,7 @@ import java.util.Set;
 @Getter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Table(name = "user")
+@Table(name = "\"user\"")
 @Schema(description = "Class that describes Users.")
 public class User{
 
