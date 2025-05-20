@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="add-tag-0.1.0" author="Artsiom">
+        <tagDatabase tag="v.0.1.0"/>
+    </changeSet>
+
+    <!-- STEP 1: CREATE TABLES -->
+    <include file="create-table-user.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-role.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-user-role.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-category.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-payment-type.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-shop.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-product-normalized.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-product-raw.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-receipt.xml" relativeToChangelogFile="true"/>
+    <include file="create-table-receipt-product-normalized.xml" relativeToChangelogFile="true"/>
+
+    <!-- STEP 2: ADD FOREIGN KEYS -->
+    <include file="add-foreign-keys-to-user-role.xml" relativeToChangelogFile="true"/>
+    <include file="add-foreign-key-receipt-to-user.xml" relativeToChangelogFile="true"/>
+    <include file="add-foreign-key-receipt-to-shop.xml" relativeToChangelogFile="true"/>
+    <include file="add-foreign-key-receipt-to-payment-type.xml" relativeToChangelogFile="true"/>
+    <include file="add-foreign-key-product-raw-to-shop.xml" relativeToChangelogFile="true"/>
+    <include file="add-foreign-key-product-raw-to-product-normalized.xml" relativeToChangelogFile="true"/>
+    <include file="add-foreign-keys-to-receipt-product-normalized.xml" relativeToChangelogFile="true"/>
+    <include file="add-foreign-key-product-normalized-to-category.xml" relativeToChangelogFile="true"/>
+
+    <!-- STEP 3: INSERT STATIC DATA -->
+    <include file="add-roles.xml" relativeToChangelogFile="true"/>
+    <include file="add-shops.xml" relativeToChangelogFile="true"/>
+    <include file="add-categories.xml" relativeToChangelogFile="true"/>
+    <include file="add-payment-types.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
