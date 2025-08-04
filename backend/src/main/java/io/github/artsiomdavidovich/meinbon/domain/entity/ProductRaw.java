@@ -34,6 +34,11 @@ public class ProductRaw {
     @ManyToOne
     private ProductNormalized productNormalized;
 
+    @NotNull
+    @JoinColumn(name = "user_id")
+    @ManyToOne
+    private User user;
+
     @Override
     public String toString() {
         return String.format("ProductRaw: id - %d, title - %s, productNormalized - %s", id, title, productNormalized.getTitle());

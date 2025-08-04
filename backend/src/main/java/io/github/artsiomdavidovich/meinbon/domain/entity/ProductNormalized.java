@@ -46,6 +46,12 @@ public class ProductNormalized {
     @JsonBackReference
     private Set<ReceiptProduct> productReceipts = new HashSet<>();
 
+    @NotNull
+    @JoinColumn(name = "user_id")
+    @JsonIgnore
+    @ManyToOne
+    private User user;
+
     @Override
     public String toString() {
         return String.format("ProductNormalized: id - %d, title - %s, category - %s", id, title, category.getTitle());

@@ -20,11 +20,15 @@
                 <constraints nullable="false"/>
             </column>
 
-            <column name="price" type="decimal(7,2)">
+            <column name="price" type="decimal(4,2)">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="quantity" type="decimal(4,3)">
+            <column name="quantity" type="decimal(3,3)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="total_price" type="decimal(4,2)">
                 <constraints nullable="false"/>
             </column>
 
