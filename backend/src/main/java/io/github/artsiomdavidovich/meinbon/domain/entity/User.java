@@ -50,6 +50,10 @@ public class User{
     @Schema(description = "List of User's receipts.")
     private Set<Receipt> receipts = new HashSet<>();
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Schema(description = "List of User's products (products that were added into the app by User.")
+    private Set<ProductNormalized> products = new HashSet<>();
+
     @Override
     public String toString() {
         return String.format("User: id - %d, email - %s, roles - %s", id, email, roles);

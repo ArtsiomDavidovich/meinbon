@@ -1,6 +1,6 @@
 package io.github.artsiomdavidovich.meinbon.domain.entity;
 
-import io.github.artsiomdavidovich.meinbon.domain.compositeKey.ReceiptProductId;
+import io.github.artsiomdavidovich.meinbon.domain.composite_key.ReceiptProductId;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotNull;
@@ -39,9 +39,18 @@ public class ReceiptProduct {
     @Column(name = "quantity")
     private BigDecimal quantity;
 
+    @NotNull
+    @Digits(integer = 4, fraction = 2)
+    @Column(name = "totalPrice")
+    private BigDecimal totalPrice;
+
     @Override
     public String toString() {
         return String.format("ReceiptProduct: receipt - %d, productNormalized - %s, price - %.2f, quantity - %.3f", receipt.getId(), productNormalized.getTitle(), price, quantity);
+    }
+
+    public BigDecimal countTotalPrice(BigDecimal quantity, BigDecimal price){
+        return price.multiply(quantity);
     }
 
 }

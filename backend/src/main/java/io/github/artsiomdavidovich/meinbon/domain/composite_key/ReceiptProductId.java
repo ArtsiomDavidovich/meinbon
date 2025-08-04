@@ -1,4 +1,4 @@
-package io.github.artsiomdavidovich.meinbon.domain.compositeKey;
+package io.github.artsiomdavidovich.meinbon.domain.composite_key;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
